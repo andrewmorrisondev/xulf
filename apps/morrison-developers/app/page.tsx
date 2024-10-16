@@ -13,11 +13,21 @@ const StyledPage = styled.div`
 const StyledBackground1a = styled.div`
   position: absolute;
   z-index: 2;
+  svg {
+    path {
+      fill: var(--background-darker);
+    }
+  }
 `;
 
 const StyledBackground1b = styled.div`
   position: absolute;
   z-index: 1;
+  svg {
+    path {
+      fill: var(--background-dark);
+    }
+  }
 `;
 
 export default function Index() {
@@ -39,11 +49,17 @@ export default function Index() {
         <StyledBackground1a>
           <AbsolutleyPositionedContainer
             svg={'/bg-svgs/geometric-1a.svg'}
+            fill={'var(--background-dark)'}
+            left={'calc(100vw / 2)'}
+            top={'calc(100dvh / 3)'}
           />
         </StyledBackground1a>
         <StyledBackground1b>
           <AbsolutleyPositionedContainer 
             svg={'/bg-svgs/geometric-1b.svg'}
+            fill={'var(--background-darker)'}
+            left={'calc(100vw / 2)'}
+            top={'calc(100dvh / 3)'}
           />
         </StyledBackground1b>
         {/* BACKGROUND */}

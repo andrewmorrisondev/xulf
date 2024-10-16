@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 interface ContainerProps {
@@ -14,30 +14,37 @@ const StyledAbsolutleyPositionedContainer = styled.div<ContainerProps>`
   overflow: visible;
 `;
 
-const SVGWrapper = styled.div`
-  position: absolute;
-  z-index: 1;
-`;
-
 export interface AbsolutleyPositionedContainerProps extends ContainerProps {
   children?: React.ReactNode;
-  svg?: string;  // Now svg is expected to be a string (path to the SVG)
+  svg?: string;
+  fill?: string;
 }
 
 export function AbsolutleyPositionedContainer({ 
   top, 
   left, 
   children, 
-  svg 
+  svg, 
+  fill,
 }: AbsolutleyPositionedContainerProps) {
+  const [svgContent, setSvgContent] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (svg) {
+      fetch(svg)
+        .then((response) => response.text())
+        .then((data) => setSvgContent(data));
+    }
+  }, [svg]);
+
   return (
-    <StyledAbsolutleyPositionedContainer top={top} left={left}>
-      {svg && (
-        <SVGWrapper>
-          {/* Render the SVG using an img tag */}
-          <img src={svg} alt="background svg" />
-        </SVGWrapper>
-      )}
+    <StyledAbsolutleyPositionedContainer 
+      top={top} 
+      left={left}
+      dangerouslySetInnerHTML={svgContent ? { 
+        __html: svgContent.replace(/fill=".*?"/g, `fill="${fill}"`) 
+      } : undefined} // Render SVG directly inside the container
+    >
       {children}
     </StyledAbsolutleyPositionedContainer>
   );

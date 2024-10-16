@@ -9,17 +9,20 @@ interface FloatingNavBarProps {
 
 const StyledFloatingNavBar = styled.div`
   max-width: 85em;
+  width: 90%;
   height: auto;
   min-height: 5.5em;
-  margin: 0 auto;
   border-radius: 4px;
   background: var(--background, #daebe4);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  position: relative;
+  position: fixed;
 
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 10;
 `;
 
@@ -36,6 +39,7 @@ const StyledLinks = styled.div`
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  margin-left: auto;
 
   h1 {
     font-size: 1rem;
