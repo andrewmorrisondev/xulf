@@ -1,8 +1,8 @@
-const baseConfig = require('../../eslint.base.config.js');
 const { FlatCompat } = require('@eslint/eslintrc');
-const { fixupConfigRules } = require('@eslint/compat');
 const js = require('@eslint/js');
+const { fixupConfigRules } = require('@eslint/compat');
 const nx = require('@nx/eslint-plugin');
+const baseConfig = require('../../../eslint.base.config.js');
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
@@ -10,7 +10,6 @@ const compat = new FlatCompat({
 });
 
 module.exports = [
-  ...baseConfig,
   ...fixupConfigRules(compat.extends('next')),
   ...fixupConfigRules(compat.extends('next/core-web-vitals')),
   ...baseConfig,

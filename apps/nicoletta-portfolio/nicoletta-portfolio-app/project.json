@@ -1,7 +1,7 @@
 {
   "name": "nicoletta-portfolio",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/nicoletta-portfolio",
+  "sourceRoot": "apps/nicoletta-portfolio/nicoletta-portfolio-app/src",
   "projectType": "application",
   "tags": [],
   "// targets": "to see all targets run: nx show project nicoletta-portfolio --web",

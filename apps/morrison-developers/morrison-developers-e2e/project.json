@@ -1,7 +1,7 @@
 {
   "name": "morrison-developers-e2e",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/morrison-developers-e2e/src",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/morrison-developers/morrison-developers-e2e/src",
   "tags": [],
   "implicitDependencies": ["morrison-developers"],
   "// targets": "to see all targets run: nx show project morrison-developers-e2e --web",

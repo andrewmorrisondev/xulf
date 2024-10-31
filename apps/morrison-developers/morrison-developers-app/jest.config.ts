@@ -1,12 +1,12 @@
-const jestConfig = {
-  displayName: 'nicoletta-portfolio',
-  preset: '../../jest.preset.js',
+const config = {
+  displayName: 'morrison-developers',
+  preset: '../../../jest.preset.js',
   transform: {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nx/react/plugins/jest',
     '^.+\\.[tj]sx?$': ['babel-jest', { presets: ['@nx/next/babel'] }],
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/apps/nicoletta-portfolio',
+  coverageDirectory: '../../coverage/apps/morrison-developers',
 };
 
-export default jestConfig;
+export default config;

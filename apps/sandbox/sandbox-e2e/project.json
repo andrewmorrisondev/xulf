@@ -1,0 +1,9 @@
+{
+  "name": "sandbox-sandbox-e2e",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/sandbox/sandbox-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["sandbox-sandbox"],
+  "// targets": "to see all targets run: nx show project sandbox-sandbox-e2e --web",
+  "targets": {}
+}

@@ -1,6 +1,6 @@
-const baseConfig = require('../../eslint.base.config.js');
+const baseConfig = require('../../../eslint.base.config.js');
 const cypress = require('eslint-plugin-cypress/flat');
-const parentConfig = require('../../eslint.config.js');
+const parentConfig = require('../../../eslint.config.js');
 
 module.exports = [
   ...baseConfig,
