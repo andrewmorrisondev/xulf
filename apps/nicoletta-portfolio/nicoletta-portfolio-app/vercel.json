@@ -2,7 +2,7 @@
   "builds": [
     {
       "src": "apps/xulf/package.json",
-      "use": "@vercel/node"
+      "use": "@vercel/next"
     }
   ],
   "routes": [
